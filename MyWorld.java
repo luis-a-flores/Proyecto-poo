@@ -4,7 +4,7 @@ import java.util.*;
 public class MyWorld extends World
 {
     public Lifes life;
-    int x=2;
+    int x=1;
    
     public MyWorld()
     { 
