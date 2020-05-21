@@ -4,4 +4,6 @@ comment1.params=
 comment1.target=MyWorld()
 comment2.params=cant
 comment2.target=void\ crearMono(int)
-numComments=3
+comment3.params=numero
+comment3.target=void\ crearPower(int)
+numComments=4

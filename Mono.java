@@ -1,11 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class rocas here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+
 public class Mono extends Actor
 {
     
@@ -35,8 +30,13 @@ public class Mono extends Actor
         {
             MyWorld w=(MyWorld)getWorld();
             getWorld().removeObject(Personaje);
-            w.life.loseLife();
+            w.vidas.decrementar();
             getWorld().addObject(new Personaje(),50,300);
-        }
-    }    
+            if(w.vidas.obtenerValor()== 0)
+            {
+                GameOver t=new GameOver();
+                getWorld().addObject(t,((getWorld().getWidth()/2)),((getWorld().getHeight()/2)));
+            }
+        }       
+    }
 }

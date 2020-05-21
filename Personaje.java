@@ -9,6 +9,7 @@ public class Personaje extends Actor
     public static final int right=3;
     int shot=2;
     boolean isShot=false;
+    boolean isPower=false;
     
     public Personaje()
     {
@@ -103,6 +104,21 @@ public class Personaje extends Actor
         if(!isShot || !Greenfoot.isKeyDown("s"))
         {
             isShot=true;
+        }
+        if(isPower && Greenfoot.isKeyDown("c"))
+        {
+            MyWorld w=(MyWorld)getWorld();
+            if(w.power.obtenerValor()>0)
+            {
+                Power sp1=new Power(direction);
+                getWorld().addObject(sp1,getX(),getY());
+                isPower=false;
+                w.power.decrementar();
+            }
+        }
+        if(!isPower && !Greenfoot.isKeyDown("c"))
+        {
+            isPower=true;
         }
     }
 }

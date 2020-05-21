@@ -35,6 +35,13 @@ public class Disparo extends Actor
                 setLocation(getX()-speed,getY());
             break;
         }
+        Actor Mono=getOneObjectAtOffset(0,0,Mono.class);
+        if(Mono!=null)
+        {
+            MyWorld w=(MyWorld)getWorld();
+            getWorld().removeObject(Mono);            
+        }
+        
         if((getX() >= getWorld().getWidth()-3) || (getX()<=3))
         {
             getWorld().removeObject(this);
@@ -46,11 +53,6 @@ public class Disparo extends Actor
         }
         }
         
-        Actor Mono=getOneObjectAtOffset(0,0,Mono.class);
-        if(Mono!=null)
-        {
-            MyWorld w=(MyWorld)getWorld();
-            getWorld().removeObject(Mono);            
-        }
+        
     }    
 }
