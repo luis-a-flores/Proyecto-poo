@@ -37,7 +37,7 @@ public class MyWorld extends World
         addObject(power,500,85);
         //
         crearPower(1);
-        
+        //
     }
     
     public void crearMono(int cant)
