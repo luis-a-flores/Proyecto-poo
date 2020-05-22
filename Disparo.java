@@ -42,6 +42,7 @@ public class Disparo extends Actor
             getWorld().removeObject(Mono);            
         }
         
+
         if((getX() >= getWorld().getWidth()-3) || (getX()<=3))
         {
             getWorld().removeObject(this);
@@ -52,7 +53,8 @@ public class Disparo extends Actor
             getWorld().removeObject(this);
         }
         }
+
         
-        
+
     }    
 }

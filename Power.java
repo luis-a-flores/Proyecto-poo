@@ -5,6 +5,7 @@ import java.util.*;
 
 public class Power extends Actor
 {
+
     int shot=1;
     int shotSpeed=7;
     int position;

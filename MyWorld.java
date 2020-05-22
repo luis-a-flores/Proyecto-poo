@@ -4,10 +4,13 @@ import java.util.*;
 public class MyWorld extends World
 {
     public Lifes life;
+
     int x=5;
     Cadenas puntos;
     Cadenas vidas;
     Cadenas power;
+
+
    
     public MyWorld()
     { 
