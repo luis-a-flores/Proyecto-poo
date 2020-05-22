@@ -1,3 +1,4 @@
+
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
 
@@ -95,11 +96,16 @@ public class Personaje extends Actor
     
     public void setShot(int direction)
     {
-        if(Greenfoot.isKeyDown("s")&& isShot)
+        if(Greenfoot.isKeyDown("s") && isShot)
         {
-            Disparo d1= new Disparo(direction);
-            getWorld().addObject(d1,getX(),getY());
-            isShot=false;
+            MyWorld w=(MyWorld)getWorld();
+            if(w.puntos.obtenerValor()>=0)
+            {
+                Disparo d1= new Disparo(direction);
+                getWorld().addObject(d1,getX(),getY());
+                isShot=false;
+                w.puntos.incrementar();
+            }
         }
         if(!isShot || !Greenfoot.isKeyDown("s"))
         {

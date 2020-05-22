@@ -39,22 +39,19 @@ public class Disparo extends Actor
         if(Mono!=null)
         {
             MyWorld w=(MyWorld)getWorld();
-            getWorld().removeObject(Mono);            
+            getWorld().removeObject(Mono);   
+            w.crearMono(1);
+            
         }
-        
-
         if((getX() >= getWorld().getWidth()-3) || (getX()<=3))
         {
             getWorld().removeObject(this);
         }else
         {
-        if((getY() >= getWorld().getWidth()-3) || (getY()<=3))
-        {
-            getWorld().removeObject(this);
+            if((getY() >= getWorld().getWidth()-3) || (getY()<=3))
+            {
+                getWorld().removeObject(this);
+            }
         }
-        }
-
-        
-
     }    
 }

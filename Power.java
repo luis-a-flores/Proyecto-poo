@@ -36,8 +36,8 @@ public class Power extends Actor
                     setRotation(180);
             break;
         }
-        List<Mono> Mono=getObjectsInRange(200,Mono.class);
-        Iterator it=Mono.iterator();
+        List<Mono> monos=getObjectsInRange(200,Mono.class);
+        Iterator it=monos.iterator();
         if(it.hasNext())
         {
             Mono m=(Mono)it.next();
@@ -47,11 +47,11 @@ public class Power extends Actor
             }
         }
         move(4);
-        Actor Mono=getOneObjectAtOffset(0,0,Mono.class);
-        if(Mono!=null)
+        Actor mono=getOneObjectAtOffset(0,0,Mono.class);
+        if(mono!=null)
         {
             MyWorld w=(MyWorld)getWorld();
-            getWorld().removeObject(Mono);
+            getWorld().removeObject(mono);
             w.puntos.incrementar();
             w.crearMono(1);
             getWorld().removeObject(this);
