@@ -10,7 +10,7 @@ public class SpPower extends Actor
         Actor act =getOneIntersectingObject(Personaje.class);
         if(act !=null)
         {
-            for(int i=1;i<=10;i++)
+            for(int i=1;i<=5;i++)
                 w.power.incrementar();
             getWorld().removeObject(this);
         }

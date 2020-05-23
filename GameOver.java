@@ -1,7 +1,6 @@
 import greenfoot.*;  
 
 
-
 public class GameOver extends Actor
 {
     GreenfootImage imagen;
@@ -10,7 +9,7 @@ public class GameOver extends Actor
     public GameOver()
     {
         imagen=new GreenfootImage(400,300);
-        imagen.setColor(new Color(250,100,0,255));
+        imagen.setColor(new Color(255,255,255));
         imagen.setFont(new Font("verdana",34));
         imagen.drawString("game Over",0,30);
         setImage(imagen);

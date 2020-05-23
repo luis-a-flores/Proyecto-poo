@@ -104,7 +104,7 @@ public class Personaje extends Actor
                 Disparo d1= new Disparo(direction);
                 getWorld().addObject(d1,getX(),getY());
                 isShot=false;
-                w.puntos.incrementar();
+                
             }
         }
         if(!isShot || !Greenfoot.isKeyDown("s"))
