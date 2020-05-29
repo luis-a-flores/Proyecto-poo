@@ -1,60 +1,58 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  
 import java.util.*;
 /**
- * Write a description of class disparo here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Clase para manejar el disparo.
  */
 public class Disparo extends Actor
 {
-    int speed=5;
-    int direction;
-    
-    
+    private int speed = 5;// Variable para la velocidad.
+    private int direction;// Variable para la direccion.
+    /**
+     * Metodo Constructor De Disparo
+     */
     public Disparo(int direction)
     {
         this.direction=direction;
     }
-    
-    
+    /**
+     * Metodo para dirigir el disparo.
+     */
     public void act() 
     {
+        // Funcion que cambia la direccion
         switch(direction)
         {
             case 0:
-                setLocation(getX(),getY()-speed);
+                setLocation(getX(),getY()-speed); // Arr
             break;
             case 1:
-                setLocation(getX(),getY()+speed);
+                setLocation(getX() ,getY()+speed -2); // Ab
             break;
             case 2:
-                setLocation(getX()+speed,getY());
+                setLocation(getX()+speed,getY()); // Der
             break;
             case 3:
-                setLocation(getX()-speed,getY());
+                setLocation(getX()-speed,getY()); // Izq
             break;
         }
-        Actor Mono=getOneObjectAtOffset(0,0,Mono.class);
+        Actor Mono = getOneObjectAtOffset(0,0,Mono.class);
+        // Verifica si existe Mono.
         if(Mono!=null)
         {
-            MyWorld w=(MyWorld)getWorld();
-            getWorld().removeObject(Mono);   
+            Nivel w = (Nivel)getWorld();
+            getWorld().removeObject(Mono);
             w.puntos.incrementar();
-            w.crearMono(1);
-            getWorld().removeObject(this);
+            w.score++;
         }
-        else
+        // Elimina el objeto del escenario
+        if((getX() >= getWorld().getWidth()-3) || (getX()<=3))
         {
-            if((getX() >= getWorld().getWidth()-3) || (getX()<=3))
+            getWorld().removeObject(this);
+        }else
+        {
+            if((getY() >= getWorld().getHeight()-3) || (getY()<=3))
             {
                 getWorld().removeObject(this);
-            }else
-            {
-                if((getY() >= getWorld().getWidth()-3) || (getY()<=3))
-                {
-                    getWorld().removeObject(this);
-                }
             }
         }
     }    

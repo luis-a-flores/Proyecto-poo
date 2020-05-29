@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Menu
+comment0.text=\r\n\ \ Clase\ para\ colocar\ el\ menu\ en\ pantalla.\r\n
+comment1.params=
+comment1.target=Menu()
+comment1.text=\r\n\ Constructor\ que\ inicia\ el\ mundo\r\n\ \r\n
+comment2.params=
+comment2.target=void\ prepare()
+comment2.text=\r\n\ Prepara\ el\ mundo,\ a\u00F1ade\ objetos.\r\n
+comment3.params=
+comment3.target=void\ act()
+comment3.text=\r\n\ Funcion\ para\ escojer\ start\ o\ exit\ \r\n
+numComments=4

@@ -1,22 +1,17 @@
 import greenfoot.*;  
-
-
+/**
+ * Clase que muestra Game Over.
+ */
 public class GameOver extends Actor
 {
-    GreenfootImage imagen;
-    String mensaje;
-    
+    /**
+     * Metodo para configurar imagen.
+     */
     public GameOver()
     {
-        imagen=new GreenfootImage(400,300);
-        imagen.setColor(new Color(255,255,255));
-        imagen.setFont(new Font("verdana",34));
-        imagen.drawString("game Over",0,30);
-        setImage(imagen);
+        setImage("game_over.jpg");
+        Nivel.score = 0;
+        Nivel.life = 3;
         Greenfoot.stop();
-    }
-    public void act() 
-    {
-        // Add your action code here.
-    }    
+    }   
 }

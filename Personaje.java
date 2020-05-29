@@ -1,130 +1,129 @@
-
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
-
+/**
+ * Clase de Diablito, personaje principal.
+ */
 public class Personaje extends Actor
 {
-    public static final int up=0;
-    public static final int down=1;
-    public static final int left=2;
-    public static final int right=3;
-    int shot=2;
-    boolean isShot=false;
-    boolean isPower=false;
-    
+    // Variables de movimiento
+    public static final int up = 0;
+    public static final int down = 1;
+    public static final int left = 2;
+    public static final int right = 3;
+    // Variable disparo direccion
+    private int shot = 2;
+    // Verifican si a disparado
+    private boolean isShot=false;
+    /**
+     * Funcion constructor.
+     */
     public Personaje()
     {
+        setImage("diablito.png");
     }
     
+    /**
+     * Funcion para control de personaje con teclas.
+     */
     public void act() 
     {
+        // Verifica si tecla a sido presionada.
         if(Greenfoot.isKeyDown("up"))
         {
-            setDirection(up);
-            shot=0;
+            if(getY() > 100){
+                setDirection(up); // Cambia direccion de Diablito.
+                shot=0;
+            }
         }
+        // Verifica si tecla a sido presionada.
         if(Greenfoot.isKeyDown("down"))
         {
-            setDirection(down);
-            shot=1;
+            if(getY() < 530){
+                setDirection(down); // Cambia Direccion de Diablito.
+                shot=1;
+            }
         }
-        if(Greenfoot.isKeyDown("left"))
-        {
-            setDirection(left);
-            shot=3;
-        }
+        // Verifica si tecla a sido presionada.
         if(Greenfoot.isKeyDown("right"))
         {
-            setDirection(right);
-            shot=2;
+            if(getX() < 750){
+                setDirection(right); // Cambia direccion de Diablito.
+                shot=2;
+            }
+        }
+        // Verifica si tecla a sido presionada.
+        if(Greenfoot.isKeyDown("left"))
+        {
+            if(getX() > 50){
+                setDirection(left); // Cambia direccion de Diablito.
+                shot=3;
+            }
         }
         setShot(shot);
     }    
-    
+     
+    /**
+     * Funcion para mover al personaje.
+     */
     public void setDirection(int direction)
     {
         switch(direction)
         {
-            case up:
-                setRotation(270);
+            case up: // Flecha hacia arriba.
                 if(Greenfoot.isKeyDown("space"))
                 {
                     setLocation(getX(),getY()-10);
-                }
-                else
+                }else
                 {
                     setLocation(getX(),getY()-1);
                 }
             break;
-            
-            case down:
-                setRotation(90);
+            case down: // Flecha hacia abajo.
                 if(Greenfoot.isKeyDown("space"))
                 {
                     setLocation(getX(),getY()+10);
-                }
-                else
+                }else
                 {
                     setLocation(getX(),getY()+1);
                 }
             break;
-            
-            case left:
-                setRotation(180);
+            case right: // Flecha hacia la derecha.
+                setImage("diablito.png");
+                if(Greenfoot.isKeyDown("space"))
+                {
+                    setLocation(getX()+10,getY());
+                }else
+                {
+                    setLocation(getX()+1,getY());
+                }
+            break;
+            case left: // Flecha hacia la izquierda.
+                setImage("diablito2.png");
                 if(Greenfoot.isKeyDown("space"))
                 {
                     setLocation(getX()-10,getY());
-                }
-                else
+                }else
                 {
                     setLocation(getX()-1,getY());
                 }
             break;
-            
-            case right:
-                setRotation(0);
-                if(Greenfoot.isKeyDown("space"))
-                {
-                    setLocation(getX()+10,getY());
-                }
-                else
-                {
-                    setLocation(getX()+1,getY());
-                }
         }
     }
-    
+    /**
+     * Funcion para disparar.
+     */
     public void setShot(int direction)
     {
-        if(Greenfoot.isKeyDown("s") && isShot)
+        // Verifica si S a sido presionada.
+        if(Greenfoot.isKeyDown("s")&& isShot)
         {
-            MyWorld w=(MyWorld)getWorld();
-            if(w.puntos.obtenerValor()>=0)
-            {
-                Disparo d1= new Disparo(direction);
-                getWorld().addObject(d1,getX(),getY());
-                isShot=false;
-                
-            }
+            Disparo d1= new Disparo(direction); // Dispara.
+            getWorld().addObject(d1,getX(),getY());
+            isShot=false;
         }
         if(!isShot || !Greenfoot.isKeyDown("s"))
         {
             isShot=true;
-        }
-        if(isPower && Greenfoot.isKeyDown("c"))
-        {
-            MyWorld w=(MyWorld)getWorld();
-            if(w.power.obtenerValor()>0)
-            {
-                Power sp1=new Power(direction);
-                getWorld().addObject(sp1,getX(),getY());
-                isPower=false;
-                w.power.decrementar();
-            }
-        }
-        if(!isPower && !Greenfoot.isKeyDown("c"))
-        {
-            isPower=true;
         }
     }
 }

@@ -1,5 +1,7 @@
 #BlueJ class context
 comment0.target=Mono
+comment0.text=\r\n\ Clase\ para\ el\ enemigo.\r\n
 comment1.params=
 comment1.target=void\ act()
+comment1.text=\r\n\ Metodo\ para\ manejar\ al\ objeto\r\n\ Movimiento.\r\n
 numComments=2

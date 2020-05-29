@@ -1,15 +1,19 @@
 #BlueJ class context
 comment0.target=Cadenas
-comment1.params=cont\ mensaje
+comment0.text=\r\n\ Clase\ para\ dibujar\ texto\ en\ el\ mundo.\r\n
+comment1.params=valorVariable\ mensaje
 comment1.target=Cadenas(int,\ java.lang.String)
+comment1.text=\r\n\ This\ method\ draws\ the\ \r\n\ \r\n\ @param\ valorVariable\ \r\n\ @param\ mensaje\ que\ recibe\ \r\n\ nombre\ de\ la\ cadena\r\n\ @return\ \r\n
 comment2.params=
 comment2.target=void\ dibuja()
+comment2.text=\r\n\ Metodo\ que\ coloca\ las\ palabras\ en\ el\ mundo.\r\n
 comment3.params=
 comment3.target=void\ incrementar()
+comment3.text=\r\n\ Metodo\ para\ incrementar\ score.\r\n
 comment4.params=
 comment4.target=void\ decrementar()
+comment4.text=\r\n\ Metodo\ para\ decrementar\ life.\r\n
 comment5.params=
 comment5.target=int\ obtenerValor()
-comment6.params=
-comment6.target=void\ act()
-numComments=7
+comment5.text=\r\n\ Metodo\ para\ obtener\ valor.\r\n
+numComments=6
