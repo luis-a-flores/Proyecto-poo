@@ -12,17 +12,31 @@ import java.util.List;
  * Clase para guardar archivo.
  */
 public class saveFile extends Actor
-{ 
+{
     Nivel w = (Nivel)getWorld();
-    public void save(){
-        Charset utf8 = StandardCharsets.UTF_8;
-        String content = w.getScore() + ",";
-        try(Writer writer = new BufferedWriter(
-                new OutputStreamWriter(new FileOutputStream("app.txt"), utf8)
-        )){
-            writer.write(content + "\n");
-        } catch (IOException e) {
-            System.err.format("IOException: %s%n", e);
+    // Creamos la variable
+    //Formatter archivo = null;
+    private String userName;
+    private int h = w.score;
+    
+    public void manejaArchivo(String userName){
+
+        String cadena = Integer.toString(h);
+
+        try{
+            //Crear un objeto File se encarga de crear o abrir acceso a un archivo.
+            File archivo = new File("C:\\Users\\agust\\IdeaProjects\\Proyecto-poo2\\archivoScore\\Rtexto.txt");
+
+            FileWriter escribir = new FileWriter(archivo, true);
+            escribir.write(userName);
+            escribir.write(" ");
+            escribir.write(cadena);
+            
+            escribir.write("\r\n");
+            escribir.close();
+        }catch(Exception e){
+            System.out.println("Error al escribir");
         }
     }
+
 }

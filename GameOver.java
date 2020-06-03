@@ -4,6 +4,8 @@ import greenfoot.*;
  */
 public class GameOver extends Actor
 {
+    private String userName;
+    saveFile sv = new saveFile();
     /**
      * Metodo para configurar imagen.
      */
@@ -12,6 +14,14 @@ public class GameOver extends Actor
         setImage("game_over.jpg");
         Nivel.score = 0;
         Nivel.life = 3;
-        Greenfoot.stop();
     }   
+    public void act() 
+    {
+        // Add your action code here.
+        if(userName == null){
+          userName = Greenfoot.ask("Captura el nombre: ");   
+        }
+        sv.manejaArchivo(userName);
+        Greenfoot.stop();
+    } 
 }
