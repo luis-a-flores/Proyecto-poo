@@ -8,4 +8,3 @@
 15 Andres 
 10 Cristi 
 22 ros 
-4 fer

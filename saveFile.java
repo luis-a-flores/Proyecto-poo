@@ -28,9 +28,9 @@ public class saveFile extends Actor
             File archivo = new File("C:\\Users\\agust\\IdeaProjects\\Proyecto-poo2\\archivoScore\\Rtexto.txt");
 
             FileWriter escribir = new FileWriter(archivo, true);
-            escribir.write(userName);
-            escribir.write(" ");
             escribir.write(cadena);
+            escribir.write(" ");
+            escribir.write(userName);
             
             escribir.write("\r\n");
             escribir.close();
