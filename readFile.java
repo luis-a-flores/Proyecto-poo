@@ -11,6 +11,8 @@ import java.util.List;
  */
 public class readFile extends Actor
 {
+    List<String> lista = new ArrayList<>();
+    String var;
     /**
      * Act - do whatever the readFile wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -18,9 +20,10 @@ public class readFile extends Actor
     public void act() 
     {
         // Add your action code here.
-        List<String> lista = new ArrayList<>();
-        //drawCredits s = new drawCredits();
-        try (FileReader fr = new FileReader("Rtexto.txt");
+        
+        
+        
+        try (FileReader fr = new FileReader("C:\\Users\\agust\\IdeaProjects\\Proyecto-poo2\\archivoScore\\Rtexto.txt");
              BufferedReader br = new BufferedReader(fr)) {
             String linea = " ";
 
@@ -32,19 +35,29 @@ public class readFile extends Actor
                 }
                 lista.add(linea);
             }
-
-            System.out.println("Cantidad de registros: " + lista.size() );
+            
+            //System.out.println("Cantidad de registros: " + lista.size() );
             Iterator iter = lista.iterator();
+            //var = (String) iter.next();
+            //imprimeRecord(var);
+            /*
             while (iter.hasNext()){
-                System.out.println(iter.next());
+                var = (String) iter.next();
+                imprimeRecord(var);
+                //System.out.println(iter.next());
                 //s.act("ola");
-            }
+            }*/
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (
                 IOException e) {
             e.printStackTrace();
         }
+        var = (String) lista.get(1);
         
     } 
+    
+    public List<String> getList(){
+        return lista;
+    }
 }

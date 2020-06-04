@@ -22,6 +22,6 @@ public class GameOver extends Actor
           userName = Greenfoot.ask("Captura el nombre: ");   
         }
         sv.manejaArchivo(userName);
-        Greenfoot.stop();
+        Greenfoot.setWorld(new Credits());
     } 
 }
