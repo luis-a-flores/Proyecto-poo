@@ -5,6 +5,9 @@ import java.util.*;
  */
 public class Level3 extends Nivel
 {
+    private int verifyWin = 22;
+    private int setWidthWin = getWidth() / 2;
+    private int setHeightWin = getHeight() / 2;
     /**
      * Constructor del nivel.
      */
@@ -15,9 +18,10 @@ public class Level3 extends Nivel
      * Metodo para colocar win.
      */
     public void act(){
-        if(Nivel.score == 22){
-           Win ws = new Win();
-           addObject(ws,getWidth()/2,getHeight()/2);
+        if(Nivel.score == verifyWin){
+           Win screenWin = new Win();
+           screenWin.work();
+           addObject(screenWin, setWidthWin, setHeightWin);
         }
     }
 }

@@ -5,6 +5,7 @@ import java.util.*;
  */
 public class Level2 extends Nivel
 {
+    private int verifyLevel3 = 12;
     /**
      * Constructor del nivel.
      */
@@ -15,7 +16,7 @@ public class Level2 extends Nivel
      * Metodo para ir al siguiente nivel.
      */
     public void act(){
-        if(Nivel.score == 12){
+        if(Nivel.score == verifyLevel3){
             Greenfoot.setWorld(new Level3());
         }
     }

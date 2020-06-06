@@ -5,12 +5,12 @@ import greenfoot.*;
  */
 public class Menu extends World
 {
-    Select s = new Select(); // Variable para seleccionar en el menu
+    Select seleccionaMenu = new Select(); 
+
+    private int posicionSelector = 0;
+    private int POSICIONSALIDA = 1;
+    private int POSICIONPLAY = 0;
     
-    // Variables para controlar el selector
-    private int band = 0;
-    private int band2 = 0;
- 
     public GreenfootSound musica =  new GreenfootSound("fabrica.wav");
     /**
      * Constructor que inicia el mundo
@@ -22,7 +22,6 @@ public class Menu extends World
         super(801, 600, 1); 
         prepare();
     }
-
     /**
      * Prepara el mundo, añade objetos.
      */
@@ -30,40 +29,45 @@ public class Menu extends World
     {
         addObject(new Start(), 400, 450);
         addObject(new Exit(), 400, 550);
-        addObject(s, 100, 450);
+        addObject(seleccionaMenu, 100, 450);
         musica.playLoop();
 
     }
-    
     /**
      * Funcion para escojer start o exit 
      */
     public void act(){
-        if(Greenfoot.isKeyDown("UP") && band != 0){
-           band ++; 
+        if(Greenfoot.isKeyDown("UP") && posicionSelector != 0){
+           posicionSelector ++; 
         }
-        if(Greenfoot.isKeyDown("DOWN") && band != 1){
-           band --; 
-        }
-        
-        if(band >= 2){
-            band = 0;
-        }
-        if(band < 0){
-            band = 1;
+        if(Greenfoot.isKeyDown("DOWN") && posicionSelector != 1){
+           posicionSelector --; 
         }
         
-        s.setLocation(100, 450 + (band * 100));
+        if(posicionSelector >= 2){
+            posicionSelector = POSICIONPLAY;
+        }
+        if(posicionSelector < 0){
+            posicionSelector = POSICIONSALIDA;
+        }
         
+        seleccionaMenu.setLocation(100, 450 + (posicionSelector * 100));
+        verificaEntrada();
+         
+    }
+    /**
+     * Checa si se presiono enter o espacio.
+     */
+    public void verificaEntrada(){
         if(Greenfoot.isKeyDown("SPACE") || Greenfoot.isKeyDown("ENTER")){
-            if(band == 0){
+            if(posicionSelector == POSICIONPLAY){
                 Greenfoot.setWorld(new Level1());
                 musica.stop();
             }
-            if(band == 1){
+            if(posicionSelector == POSICIONSALIDA){
                 Greenfoot.stop();
                 musica.stop();
             }
-        } 
+        }
     }
 }

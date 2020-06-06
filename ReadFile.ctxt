@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=ReadFile
+comment0.text=\r\n\ Clase\ para\ leer\ archivo.\r\n
+comment1.params=
+comment1.target=void\ leeArchivo()
+comment1.text=\r\n\ Lee\ el\ archivo.\r\n
+comment2.params=o1\ o2
+comment2.target=int\ compare(Record,\ Record)
+comment3.params=
+comment3.target=java.util.List\ getList()
+comment3.text=\r\n\ Regresa\ lista.\r\n
+numComments=4

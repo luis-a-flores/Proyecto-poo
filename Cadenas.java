@@ -4,8 +4,8 @@ import greenfoot.*;
  */
 public class Cadenas extends Actor
 {
-    private GreenfootImage imagen; // Variable para imagen
-    private int valorVariable; // Variable contiene el valor de life o score
+    private GreenfootImage imagen; 
+    private int valorVariable; 
     private String mensaje;
     
      /**
@@ -18,8 +18,8 @@ public class Cadenas extends Actor
      */
     public Cadenas(int valorVariable, String mensaje)
     {
-        this.valorVariable = valorVariable; // Asigna el valor inicial 
-        this.mensaje = mensaje; // Asigna el nombre de la variable 
+        this.valorVariable = valorVariable; 
+        this.mensaje = mensaje; 
         
         imagen = new GreenfootImage(250,150);
         imagen.setColor(new Color(200,200,0,255));

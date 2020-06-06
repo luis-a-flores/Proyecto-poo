@@ -1,7 +1,10 @@
 #BlueJ class context
 comment0.target=Win
+comment0.text=\r\n\ Clase\ para\ mostrar\ Creditos\r\n
 comment1.params=
 comment1.target=Win()
+comment1.text=\r\n\ Constructor.\r\n
 comment2.params=
-comment2.target=void\ act()
+comment2.target=void\ work()
+comment2.text=\r\n\ Guarda\ archivo.\r\n
 numComments=3

@@ -5,8 +5,8 @@ import java.util.*;
  */
 public class Disparo extends Actor
 {
-    private int speed = 5;// Variable para la velocidad.
-    private int direction;// Variable para la direccion.
+    private int speed = 5;
+    private int direction;
     /**
      * Metodo Constructor De Disparo
      */
@@ -19,7 +19,6 @@ public class Disparo extends Actor
      */
     public void act() 
     {
-        // Funcion que cambia la direccion
         switch(direction)
         {
             case 0:
@@ -35,25 +34,39 @@ public class Disparo extends Actor
                 setLocation(getX()-speed,getY()); // Izq
             break;
         }
+        existenciaMono();
+        eliminaObjeto();
+    }
+    /**
+     * Verifica exiistencia enemigo.
+     */
+    public void existenciaMono(){
         Actor Mono = getOneObjectAtOffset(0,0,Mono.class);
-        // Verifica si existe Mono.
         if(Mono!=null)
         {
-            Nivel w = (Nivel)getWorld();
+            Nivel actualWorld = (Nivel)getWorld();
             getWorld().removeObject(Mono);
-            w.puntos.incrementar();
-            w.score++;
+            actualWorld.puntos.incrementar();
+            actualWorld.score++;
         }
-        // Elimina el objeto del escenario
-        if((getX() >= getWorld().getWidth()-3) || (getX()<=3))
+    }
+    /**
+     * Quita objeto de escenario.
+     */
+    public void eliminaObjeto(){
+        int limiteDerecho = getWorld().getWidth()-3;
+        int limiteIzquierdo = 3;
+        int limiteArriba = getWorld().getHeight()-3;
+        int limiteAbajo = 3;
+        if((getX() >= limiteDerecho) || (getX())<=limiteIzquierdo)
         {
             getWorld().removeObject(this);
         }else
         {
-            if((getY() >= getWorld().getHeight()-3) || (getY()<=3))
+            if((getY() >= limiteArriba) || (getY()<=limiteAbajo))
             {
                 getWorld().removeObject(this);
             }
         }
-    }    
+    }
 }

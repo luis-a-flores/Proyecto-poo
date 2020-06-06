@@ -4,16 +4,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Mono extends Actor
 {
+    
     /**
      * Metodo para manejar al objeto
      * Movimiento.
      */
     public void act() 
     {
-        move(2); // Mueve al mono.
-        World m = getWorld();
-        // Configura posicion en X.
-        if(getX() >= m.getWidth()-20 || getX()<=20)
+        move(2); 
+        World actualWorld = getWorld();
+        
+        if(getX() >= actualWorld.getWidth()-20 || getX()<=20)
         {
             turn(180);
             if(Greenfoot.getRandomNumber(100)<90)
@@ -21,8 +22,7 @@ public class Mono extends Actor
                 turn(Greenfoot.getRandomNumber(90-45));
             }
         }
-        // Configura posicion en Y.
-        if(getY()>=m.getHeight()-20 || getY()<=50)
+        if(getY()>=actualWorld.getHeight()-20 || getY()<=50)
         {
             turn(180);
             if(Greenfoot.getRandomNumber(100)<90)
@@ -30,21 +30,29 @@ public class Mono extends Actor
                 turn(Greenfoot.getRandomNumber(90-45));
             }
         }
+        verificaExistencia();
+    }
+    /**
+     * Verifica si toco a Diablito
+     */
+    public void verificaExistencia(){
+        Nivel world = (Nivel)getWorld();
         Actor Personaje = getOneObjectAtOffset(0,0,Personaje.class);
-        // Verifica existencia Diablito.
         if(Personaje!=null)
         {
-            Nivel w = (Nivel)getWorld();
             getWorld().removeObject(Personaje);
-            w.vidas.decrementar(); // Decrementa vida
-            w.life --;
-            getWorld().addObject(new Personaje(),50,300); // Ubica al personaje si aun hay vidas.
-            // Verifica si aun tiene vidas.
-            if(w.vidas.obtenerValor() <= 0)
+            world.vidas.decrementar(); 
+            world.life--;
+            getWorld().addObject(new Personaje(),50,300);
+            //verificaVidas();
+             if(world.vidas.obtenerValor() <= 0)
             {
-                GameOver t = new GameOver(); // Termina el juego
-                getWorld().addObject(t,((getWorld().getWidth()/2)),((getWorld().getHeight()/2)));
+                GameOver showGO = new GameOver();
+                showGO.work();
+                Nivel.score = 0;
+                Nivel.life = 3;
+                getWorld().addObject(showGO,((getWorld().getWidth()/2)),((getWorld().getHeight()/2)));
             }
-        }       
+        }
     }
 }

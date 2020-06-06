@@ -5,14 +5,13 @@ import java.util.*;
  */
 public class Personaje extends Actor
 {
-    // Variables de movimiento
     public static final int up = 0;
     public static final int down = 1;
     public static final int left = 2;
     public static final int right = 3;
-    // Variable disparo direccion
+    
     private int shot = 2;
-    // Verifican si a disparado
+    
     private boolean isShot=false;
     /**
      * Funcion constructor.
@@ -27,7 +26,6 @@ public class Personaje extends Actor
      */
     public void act() 
     {
-        // Verifica si tecla a sido presionada.
         if(Greenfoot.isKeyDown("up"))
         {
             if(getY() > 100){
@@ -35,27 +33,24 @@ public class Personaje extends Actor
                 shot=0;
             }
         }
-        // Verifica si tecla a sido presionada.
         if(Greenfoot.isKeyDown("down"))
         {
             if(getY() < 530){
-                setDirection(down); // Cambia Direccion de Diablito.
+                setDirection(down); 
                 shot=1;
             }
         }
-        // Verifica si tecla a sido presionada.
         if(Greenfoot.isKeyDown("right"))
         {
             if(getX() < 750){
-                setDirection(right); // Cambia direccion de Diablito.
+                setDirection(right);
                 shot=2;
             }
         }
-        // Verifica si tecla a sido presionada.
         if(Greenfoot.isKeyDown("left"))
         {
             if(getX() > 50){
-                setDirection(left); // Cambia direccion de Diablito.
+                setDirection(left); 
                 shot=3;
             }
         }
@@ -69,7 +64,7 @@ public class Personaje extends Actor
     {
         switch(direction)
         {
-            case up: // Flecha hacia arriba.
+            case up: 
                 if(Greenfoot.isKeyDown("space"))
                 {
                     setLocation(getX(),getY()-10);
@@ -78,7 +73,7 @@ public class Personaje extends Actor
                     setLocation(getX(),getY()-1);
                 }
             break;
-            case down: // Flecha hacia abajo.
+            case down: 
                 if(Greenfoot.isKeyDown("space"))
                 {
                     setLocation(getX(),getY()+10);
@@ -87,7 +82,7 @@ public class Personaje extends Actor
                     setLocation(getX(),getY()+1);
                 }
             break;
-            case right: // Flecha hacia la derecha.
+            case right: 
                 setImage("diablito.png");
                 if(Greenfoot.isKeyDown("space"))
                 {
@@ -97,7 +92,7 @@ public class Personaje extends Actor
                     setLocation(getX()+1,getY());
                 }
             break;
-            case left: // Flecha hacia la izquierda.
+            case left: 
                 setImage("diablito2.png");
                 if(Greenfoot.isKeyDown("space"))
                 {
@@ -114,7 +109,6 @@ public class Personaje extends Actor
      */
     public void setShot(int direction)
     {
-        // Verifica si S a sido presionada.
         if(Greenfoot.isKeyDown("s")&& isShot)
         {
             Disparo d1= new Disparo(direction); // Dispara.

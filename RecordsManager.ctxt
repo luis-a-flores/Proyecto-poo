@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=RecordsManager
+comment0.text=\r\n\ Clase\ para\ guardar\ archivo.\r\n
+comment1.params=userName\ score
+comment1.target=void\ saveRecord(java.lang.String,\ int)
+comment1.text=\r\n\ Clase\ para\ escribir\ en\ archivo.\r\n
+comment2.params=
+comment2.target=java.util.List\ getRecords()
+comment3.params=lista
+comment3.target=void\ sorted(java.util.List)
+comment4.params=o1\ o2
+comment4.target=int\ compare(Record,\ Record)
+numComments=5
