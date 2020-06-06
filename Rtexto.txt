@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 roberto,22
 ros,22
 jjj,22
@@ -8,3 +9,15 @@ Andrea,21
 luis Alfredo,2
 luis,0
 luis Alfredo,0
+=======
+22 roberto 
+3 francisco 
+10 agus 
+14 Mariana 
+4 Mari 
+21 Andrea 
+11 Memo 
+15 Andres 
+10 Cristi 
+22 ros 
+>>>>>>> 0769eb02839f2dd5de87b761a990e8e097c19a4a

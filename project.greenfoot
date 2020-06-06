@@ -12,6 +12,7 @@ class.Personaje.image=diablito2.png
 class.Select.image=karo.png
 class.Start.image=start.png
 dependency1.from=Credits
+<<<<<<< HEAD
 dependency1.to=RecordsManager
 dependency1.type=UsesDependency
 dependency10.from=Nivel
@@ -49,12 +50,55 @@ dependency2.to=Record
 dependency2.type=UsesDependency
 dependency20.from=Mono
 dependency20.to=GameOver
+=======
+dependency1.to=readFile
+dependency1.type=UsesDependency
+dependency10.from=Level2
+dependency10.to=Level3
+dependency10.type=UsesDependency
+dependency11.from=Level3
+dependency11.to=Win
+dependency11.type=UsesDependency
+dependency12.from=Level1
+dependency12.to=Level2
+dependency12.type=UsesDependency
+dependency13.from=Disparo
+dependency13.to=Nivel
+dependency13.type=UsesDependency
+dependency14.from=GameOver
+dependency14.to=saveFile
+dependency14.type=UsesDependency
+dependency15.from=GameOver
+dependency15.to=Credits
+dependency15.type=UsesDependency
+dependency16.from=GameOver
+dependency16.to=Nivel
+dependency16.type=UsesDependency
+dependency17.from=Mono
+dependency17.to=Nivel
+dependency17.type=UsesDependency
+dependency18.from=Mono
+dependency18.to=Personaje
+dependency18.type=UsesDependency
+dependency19.from=Mono
+dependency19.to=GameOver
+dependency19.type=UsesDependency
+dependency2.from=Menu
+dependency2.to=Select
+dependency2.type=UsesDependency
+dependency20.from=saveFile
+dependency20.to=Nivel
+>>>>>>> 0769eb02839f2dd5de87b761a990e8e097c19a4a
 dependency20.type=UsesDependency
 dependency21.from=Personaje
 dependency21.to=Disparo
 dependency21.type=UsesDependency
 dependency22.from=Win
+<<<<<<< HEAD
 dependency22.to=RecordsManager
+=======
+dependency22.to=saveFile
+>>>>>>> 0769eb02839f2dd5de87b761a990e8e097c19a4a
 dependency22.type=UsesDependency
 dependency23.from=Win
 dependency23.to=Credits
@@ -62,6 +106,7 @@ dependency23.type=UsesDependency
 dependency24.from=Win
 dependency24.to=Nivel
 dependency24.type=UsesDependency
+<<<<<<< HEAD
 dependency25.from=ReadFile
 dependency25.to=Record
 dependency25.type=UsesDependency
@@ -96,6 +141,36 @@ editor.fx.0.y=-8
 height=744
 package.numDependencies=26
 package.numTargets=18
+=======
+dependency3.from=Menu
+dependency3.to=Start
+dependency3.type=UsesDependency
+dependency4.from=Menu
+dependency4.to=Exit
+dependency4.type=UsesDependency
+dependency5.from=Menu
+dependency5.to=Level1
+dependency5.type=UsesDependency
+dependency6.from=Nivel
+dependency6.to=Cadenas
+dependency6.type=UsesDependency
+dependency7.from=Nivel
+dependency7.to=Personaje
+dependency7.type=UsesDependency
+dependency8.from=Nivel
+dependency8.to=Mono
+dependency8.type=UsesDependency
+dependency9.from=Nivel
+dependency9.to=GameOver
+dependency9.type=UsesDependency
+editor.fx.0.height=739
+editor.fx.0.width=816
+editor.fx.0.x=408
+editor.fx.0.y=34
+height=876
+package.numDependencies=24
+package.numTargets=17
+>>>>>>> 0769eb02839f2dd5de87b761a990e8e097c19a4a
 project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
@@ -118,6 +193,7 @@ target1.width=80
 target1.x=0
 target1.y=0
 target10.height=50
+<<<<<<< HEAD
 target10.name=Cadenas
 target10.showInterface=false
 target10.type=ClassTarget
@@ -126,19 +202,34 @@ target10.x=0
 target10.y=0
 target11.height=50
 target11.name=Level3
+=======
+target10.name=Select
+target10.showInterface=false
+target10.type=ClassTarget
+target10.width=80
+target10.x=0
+target10.y=0
+target11.height=50
+target11.name=Cadenas
+>>>>>>> 0769eb02839f2dd5de87b761a990e8e097c19a4a
 target11.showInterface=false
 target11.type=ClassTarget
-target11.width=90
+target11.width=100
 target11.x=0
 target11.y=0
 target12.height=50
+<<<<<<< HEAD
 target12.name=Record
+=======
+target12.name=Level3
+>>>>>>> 0769eb02839f2dd5de87b761a990e8e097c19a4a
 target12.showInterface=false
 target12.type=ClassTarget
-target12.width=80
+target12.width=90
 target12.x=0
 target12.y=0
 target13.height=50
+<<<<<<< HEAD
 target13.name=RecordsManager
 target13.showInterface=false
 target13.type=ClassTarget
@@ -147,32 +238,55 @@ target13.x=0
 target13.y=0
 target14.height=50
 target14.name=Level1
+=======
+target13.name=Level1
+target13.showInterface=false
+target13.type=ClassTarget
+target13.width=90
+target13.x=0
+target13.y=0
+target14.height=50
+target14.name=Menu
+>>>>>>> 0769eb02839f2dd5de87b761a990e8e097c19a4a
 target14.showInterface=false
 target14.type=ClassTarget
 target14.width=90
 target14.x=0
 target14.y=0
 target15.height=50
+<<<<<<< HEAD
 target15.name=Menu
+=======
+target15.name=Win
+>>>>>>> 0769eb02839f2dd5de87b761a990e8e097c19a4a
 target15.showInterface=false
 target15.type=ClassTarget
 target15.width=80
 target15.x=0
 target15.y=0
 target16.height=50
+<<<<<<< HEAD
 target16.name=Win
+=======
+target16.name=Nivel
+>>>>>>> 0769eb02839f2dd5de87b761a990e8e097c19a4a
 target16.showInterface=false
 target16.type=ClassTarget
 target16.width=80
 target16.x=0
 target16.y=0
 target17.height=50
+<<<<<<< HEAD
 target17.name=Nivel
+=======
+target17.name=Exit
+>>>>>>> 0769eb02839f2dd5de87b761a990e8e097c19a4a
 target17.showInterface=false
 target17.type=ClassTarget
 target17.width=80
 target17.x=0
 target17.y=0
+<<<<<<< HEAD
 target18.height=50
 target18.name=Exit
 target18.showInterface=false
@@ -180,6 +294,8 @@ target18.type=ClassTarget
 target18.width=80
 target18.x=0
 target18.y=0
+=======
+>>>>>>> 0769eb02839f2dd5de87b761a990e8e097c19a4a
 target2.height=50
 target2.name=GameOver
 target2.showInterface=false
@@ -223,13 +339,18 @@ target7.width=80
 target7.x=0
 target7.y=0
 target8.height=50
+<<<<<<< HEAD
 target8.name=Level2
+=======
+target8.name=readFile
+>>>>>>> 0769eb02839f2dd5de87b761a990e8e097c19a4a
 target8.showInterface=false
 target8.type=ClassTarget
 target8.width=90
 target8.x=0
 target8.y=0
 target9.height=50
+<<<<<<< HEAD
 target9.name=Select
 target9.showInterface=false
 target9.type=ClassTarget
@@ -238,6 +359,16 @@ target9.x=0
 target9.y=0
 version=3.0.0
 width=1382
+=======
+target9.name=Level2
+target9.showInterface=false
+target9.type=ClassTarget
+target9.width=90
+target9.x=0
+target9.y=0
+version=3.0.0
+width=1616
+>>>>>>> 0769eb02839f2dd5de87b761a990e8e097c19a4a
 world.lastInstantiated=Menu
 xPosition=0
 yPosition=0
